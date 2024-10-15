@@ -5,6 +5,7 @@ def readIPWriteTOFile():
     video = cv2.VideoCapture(0)
     w = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
     h = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    cv2.resizeWindow('Window',w,h)
 
     while (True):
         ok, img = video.read()
