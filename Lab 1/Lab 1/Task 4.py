@@ -10,9 +10,14 @@ def readVideoWriteTOFile():
     video_writer = cv2.VideoWriter("output.mov", fourcc, 25, (w, h))
     while (True):
         ok, img = video.read()
+
+        '''updateImg = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)'''
+
+        updateImg = cv2.resize(img, (100, 100))
+
         if not(ok):
             break
-        cv2.imshow('Window', img)
+        cv2.imshow('Window', updateImg)
         video_writer.write(img)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break

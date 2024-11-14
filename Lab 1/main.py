@@ -15,5 +15,6 @@ cv2.destroyWindow('Window')
 '''
 
 
-
+cv2.namedWindow('Window',cv2.WINDOW_NORMAL)
+cv2.namedWindow('Window',cv2.WINDOW_FREERATIO)
 
