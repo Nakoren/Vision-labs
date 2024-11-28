@@ -10,9 +10,9 @@ def start():
     cv2.resizeWindow('Normal', 1000, 500)
     cv2.imshow("Normal", img)
 
-
     size = 5
-    blurred = gaussianBlur(img, size)
+    smooth_value = 1
+    blurred = gaussianBlur(img, size, smooth_value)
     
     cv2.namedWindow('Blurred', cv2.WINDOW_NORMAL)
     cv2.resizeWindow('Blurred', 1000, 500)
@@ -21,10 +21,9 @@ def start():
     cv2.waitKey(0)
     cv2.destroyWindow('Normal')
 
-
-def gaussianBlur(img, core_size):
+def gaussianBlur(img, core_size, smooth_value):
     print("Getting matrix")
-    gaussian_matr = get_gaussian_matrix(core_size, 1)
+    gaussian_matr = get_gaussian_matrix(core_size, smooth_value)
     print("normalizing")
     normalized_matr = normalize(gaussian_matr, core_size)
 
