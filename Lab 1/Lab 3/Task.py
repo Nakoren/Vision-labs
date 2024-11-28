@@ -12,7 +12,7 @@ def start():
 
     size = 5
     smooth_value = 1
-    blurred = gaussianBlur(img, size, smooth_value)
+    blurred = gaussianBlurCV(img, size, smooth_value)
     
     cv2.namedWindow('Blurred', cv2.WINDOW_NORMAL)
     cv2.resizeWindow('Blurred', 1000, 500)
@@ -20,6 +20,11 @@ def start():
 
     cv2.waitKey(0)
     cv2.destroyWindow('Normal')
+
+
+def gaussianBlurCV(img, core_size, smooth_value):
+    blur_img = cv2.GaussianBlur(img, (core_size, core_size), smooth_value)
+    return blur_img
 
 def gaussianBlur(img, core_size, smooth_value):
     print("Getting matrix")
