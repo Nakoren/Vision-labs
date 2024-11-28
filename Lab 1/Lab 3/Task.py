@@ -38,13 +38,13 @@ def gaussianBlur(img, core_size, smooth_value):
     blur_img = img.copy()
 
     core_center = core_size // 2
-    for i in range(core_center, blur_img.shape[0]):
+    for i in range(core_center, blur_img.shape[0] - core_center):
         for j in range(core_center, blur_img.shape[1] - core_center):
             #print("Updating pixel" + str(i) +" - " + str(j))
             # операция свёртки
             new_value = 0
-            for k in range(-(core_size // 2), core_size // 2 + 1):
-                for l in range(-(core_size // 2), core_size // 2 + 1):
+            for k in range(-(core_size // 2), core_size // 2+1):
+                for l in range(-(core_size // 2), core_size // 2+1):
                     new_value += img[i + k, j + l] * normalized_matr[k + (core_size // 2), l + (core_size // 2)]
             blur_img[i, j] = new_value
     return blur_img
