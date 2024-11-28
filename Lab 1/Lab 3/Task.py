@@ -1,18 +1,31 @@
 import math
 import cv2
 import numpy as np
-'''
-cv2.namedWindow('NormalWindow', cv2.WINDOW_NORMAL)
-video = cv2.VideoCapture("C:/Users/minen/Desktop/Unik/Vision/random.mp4")
 
-while (True):
-    ret, frame = video.read()
-    if not(ret):
-        break
-    cv2.imshow('NormalWindow', frame)
-    if(cv2.waitKey(1) & 0xFF == 27):
-        break
-'''
+def start():
+    cv2.namedWindow('NormalWindow', cv2.WINDOW_NORMAL)
+    cv2.namedWindow('Blurred', cv2.WINDOW_NORMAL)
+    img = cv2.imread("Pic.jpg",cv2.IMREAD_GRAYSCALE)
+
+    size = 5
+
+
+
+def gaussianBlur(img, core_size):
+    gaussian_matr = get_gaussian_matrix(core_size, 1)
+    normalized_matr = normalize(gaussian_matr, core_size)
+
+    blur_img = img.copy()
+
+    center = core_size // 2
+    for i in range(center, blur_img.shape[0] - center):
+        for j in range(center, blur_img.shape[1] - center):
+            # операция свёртки
+            new_value = 0
+            for k in range(-(core_size // 2), core_size // 2 + 1):
+                for l in range(-(core_size // 2), core_size // 2 + 1):
+                    new_value += img[i + k, j + l] * normalized_matr[k + (core_size // 2), l + (core_size // 2)]
+            blur_img[i, j] = new_value
 
 
 def get_gaussian_matrix(size, smooth_value):
@@ -22,7 +35,7 @@ def get_gaussian_matrix(size, smooth_value):
         for y in range(size):
             power = -1*(((x-av_deviation[0]) ^ 2 + (y-av_deviation[1]) ^ 2)/2*(pow(smooth_value,2)))
 
-            result_matrix[x, y] = pow(1/(2*math.pi*(pow(smooth_value,2)))*math.e, power)
+            result_matrix[x, y] = 1/(2*math.pi*(pow(smooth_value,2)))* pow(math.e, power)
     return result_matrix
 
 
@@ -37,12 +50,3 @@ def normalize(matr, size):
            result_matrix[i,j] = matr[i,j]/sum
 
     return result_matrix
-
-
-size = 5
-
-matr = get_gaussian_matrix(size, 1)
-new_matr = normalize(matr, size)
-print(new_matr)
-
-
