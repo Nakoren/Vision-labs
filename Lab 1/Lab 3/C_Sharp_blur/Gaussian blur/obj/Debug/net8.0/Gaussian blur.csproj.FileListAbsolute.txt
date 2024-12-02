@@ -1,0 +1,26 @@
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\Gaussian blur.exe
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\Gaussian blur.deps.json
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\Gaussian blur.runtimeconfig.json
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\Gaussian blur.dll
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\Gaussian blur.pdb
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\OpenCvSharp.dll
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\obj\Debug\net8.0\Gaussian blur.csproj.AssemblyReference.cache
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\obj\Debug\net8.0\Gaussian blur.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\obj\Debug\net8.0\Gaussian blur.AssemblyInfoInputs.cache
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\obj\Debug\net8.0\Gaussian blur.AssemblyInfo.cs
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\obj\Debug\net8.0\Gaussian blur.csproj.CoreCompileInputs.cache
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\obj\Debug\net8.0\Gaussian blur.sourcelink.json
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\obj\Debug\net8.0\Gaussian.09E560BE.Up2Date
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\obj\Debug\net8.0\Gaussian blur.dll
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\obj\Debug\net8.0\refint\Gaussian blur.dll
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\obj\Debug\net8.0\Gaussian blur.pdb
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\obj\Debug\net8.0\Gaussian blur.genruntimeconfig.cache
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\obj\Debug\net8.0\ref\Gaussian blur.dll
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\OpenCvSharp.Extensions.dll
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\runtimes\win-x64\native\OpenCvSharpExtern.dll
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\runtimes\win-x64\native\opencv_videoio_ffmpeg4100_64.dll
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\runtimes\win-x86\native\OpenCvSharpExtern.dll
+C:\Users\minen\Desktop\Unik\Vision\Lab 1\Lab 3\C_Sharp_blur\Gaussian blur\bin\Debug\net8.0\runtimes\win-x86\native\opencv_videoio_ffmpeg4100.dll

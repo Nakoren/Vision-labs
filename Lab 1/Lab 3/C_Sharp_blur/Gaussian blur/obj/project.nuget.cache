@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "TgQL8fMrbF3ta/82M2+N1UJHJIOFacrx/iPx0DpqNjq8VzASW0vV2Odm5C6Jmq7wJifxwUKcQ6gpexVTPBU6HA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\minen\\Desktop\\Unik\\Vision\\Lab 1\\Lab 3\\C_Sharp_blur\\Gaussian blur\\Gaussian blur.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\minen\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\minen\\.nuget\\packages\\opencvsharp4\\4.10.0.20241108\\opencvsharp4.4.10.0.20241108.nupkg.sha512",
+    "C:\\Users\\minen\\.nuget\\packages\\opencvsharp4.extensions\\4.10.0.20241108\\opencvsharp4.extensions.4.10.0.20241108.nupkg.sha512",
+    "C:\\Users\\minen\\.nuget\\packages\\opencvsharp4.runtime.win\\4.10.0.20241108\\opencvsharp4.runtime.win.4.10.0.20241108.nupkg.sha512",
+    "C:\\Users\\minen\\.nuget\\packages\\opencvsharp4.windows\\4.10.0.20241108\\opencvsharp4.windows.4.10.0.20241108.nupkg.sha512",
+    "C:\\Users\\minen\\.nuget\\packages\\system.drawing.common\\8.0.0\\system.drawing.common.8.0.0.nupkg.sha512",
+    "C:\\Users\\minen\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\minen\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
