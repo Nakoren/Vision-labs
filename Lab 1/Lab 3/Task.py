@@ -16,7 +16,7 @@ def start():
     size2 = 10
     smooth_value2 = 0.5
 
-    blurred = gaussianBlurCV(img, size1, smooth_value2)
+    blurred = gaussianBlur(img, size1, smooth_value2)
 
     cv2.namedWindow('Blurred', cv2.WINDOW_NORMAL)
     cv2.resizeWindow('Blurred', 1000, 500)
@@ -34,8 +34,6 @@ def gaussianBlur(img, core_size, smooth_value):
     gaussian_matr = get_gaussian_matrix(core_size, smooth_value)
     print("normalizing")
     normalized_matr = normalize(gaussian_matr)
-
-
     blur_img = img.copy()
 
     core_center = core_size // 2
@@ -46,20 +44,21 @@ def gaussianBlur(img, core_size, smooth_value):
             new_value = 0
             for k in range(-(core_size // 2), core_size // 2+1):
                 for l in range(-(core_size // 2), core_size // 2+1):
+                    prev_value = img[i+k, j+l]
                     new_value += img[i + k, j + l] * normalized_matr[k + (core_size // 2), l + (core_size // 2)]
             blur_img[i, j] = new_value
     return blur_img
 
 
 def get_gaussian_matrix(size, smooth_value):
-    av_deviation = (math.ceil(size), math.ceil(size))
+    av_deviation = (math.ceil(size/2), math.ceil(size/2))
     result_matrix = np.ones((size, size))
     for x in range(size):
         for y in range(size):
             power = -1*(((x-av_deviation[0]) ** 2 + (y-av_deviation[1]) ** 2)/2*(pow(smooth_value,2)))
             print(power)
 
-            result_matrix[x, y] = 1/(2*math.pi*(pow(smooth_value,2))) * pow(math.e, power)
+            result_matrix[y, x] = 1/(2*math.pi*(pow(smooth_value,2))) * pow(math.e, power)
     return result_matrix
 
 

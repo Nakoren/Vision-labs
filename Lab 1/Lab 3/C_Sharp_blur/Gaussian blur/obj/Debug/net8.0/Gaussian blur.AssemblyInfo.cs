@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gaussian blur")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+232089cd22347c3e146c9d8f2303f2ac7f735b8e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5dacd51625e038eaf12b927a95b4340f35a7489")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gaussian blur")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gaussian blur")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,9 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1B8EB0F5-EDF0-43F7-8089-F0075FCFAC4F}|Gaussian blur.csproj|c:\\users\\minen\\desktop\\unik\\vision\\lab 1\\lab 3\\c_sharp_blur\\gaussian blur\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B8EB0F5-EDF0-43F7-8089-F0075FCFAC4F}|Gaussian blur.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\minen\\AppData\\Local\\SourceServer\\a4b5d5c2433da4927e01d49e0d65e413f47f0c50228d12bfcfa90f83e8e25b28\\src\\OpenCvSharp\\Internal\\PInvoke\\NativeMethods\\NativeMethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -29,26 +26,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NativeMethods.cs",
-              "DocumentMoniker": "C:\\Users\\minen\\AppData\\Local\\SourceServer\\a4b5d5c2433da4927e01d49e0d65e413f47f0c50228d12bfcfa90f83e8e25b28\\src\\OpenCvSharp\\Internal\\PInvoke\\NativeMethods\\NativeMethods.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\a4b5d5c2433da4927e01d49e0d65e413f47f0c50228d12bfcfa90f83e8e25b28\\src\\OpenCvSharp\\Internal\\PInvoke\\NativeMethods\\NativeMethods.cs",
-              "ToolTip": "C:\\Users\\minen\\AppData\\Local\\SourceServer\\a4b5d5c2433da4927e01d49e0d65e413f47f0c50228d12bfcfa90f83e8e25b28\\src\\OpenCvSharp\\Internal\\PInvoke\\NativeMethods\\NativeMethods.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\a4b5d5c2433da4927e01d49e0d65e413f47f0c50228d12bfcfa90f83e8e25b28\\src\\OpenCvSharp\\Internal\\PInvoke\\NativeMethods\\NativeMethods.cs",
-              "ViewState": "AQIAANwAAAAAAAAAAAAnwN8AAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T00:19:51.411Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\minen\\Desktop\\Unik\\Vision\\Lab 1\\Lab 3\\C_Sharp_blur\\Gaussian blur\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\minen\\Desktop\\Unik\\Vision\\Lab 1\\Lab 3\\C_Sharp_blur\\Gaussian blur\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABQAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwA0AAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T11:10:14.471Z",
               "EditorCaption": ""
