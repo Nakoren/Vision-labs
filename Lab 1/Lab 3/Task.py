@@ -4,7 +4,7 @@ import numpy as np
 
 def start():
 
-    img = cv2.imread("Pic_compressed.jpg", cv2.IMREAD_GRAYSCALE)
+    img = cv2.imread("Pic_shakal.jpg", cv2.IMREAD_GRAYSCALE)
 
     cv2.namedWindow('Normal', cv2.WINDOW_NORMAL)
     cv2.resizeWindow('Normal', 1000, 500)
@@ -44,14 +44,13 @@ def gaussianBlur(img, core_size, smooth_value):
             new_value = 0
             for k in range(-(core_size // 2), core_size // 2+1):
                 for l in range(-(core_size // 2), core_size // 2+1):
-                    prev_value = img[i+k, j+l]
                     new_value += img[i + k, j + l] * normalized_matr[k + (core_size // 2), l + (core_size // 2)]
             blur_img[i, j] = new_value
     return blur_img
 
 
 def get_gaussian_matrix(size, smooth_value):
-    av_deviation = (math.ceil(size/2), math.ceil(size/2))
+    av_deviation = (math.floor(size/2), math.floor(size/2))
     result_matrix = np.ones((size, size))
     for x in range(size):
         for y in range(size):
