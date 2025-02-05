@@ -4,7 +4,7 @@ import numpy as np
 
 def start():
 
-    img = cv2.imread("Pic_shakal.jpg", cv2.IMREAD_GRAYSCALE)
+    img = cv2.imread("../Lab 4/Pic_shakal.jpg", cv2.IMREAD_GRAYSCALE)
 
     cv2.namedWindow('Normal', cv2.WINDOW_NORMAL)
     cv2.resizeWindow('Normal', 1000, 500)
