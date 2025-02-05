@@ -56,7 +56,6 @@ def get_gaussian_matrix(size, smooth_value):
         for y in range(size):
             power = -1*(((x-av_deviation[0]) ** 2 + (y-av_deviation[1]) ** 2)/2*(pow(smooth_value,2)))
             print(power)
-
             result_matrix[y, x] = 1/(2*math.pi*(pow(smooth_value,2))) * pow(math.e, power)
     return result_matrix
 
