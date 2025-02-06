@@ -16,9 +16,16 @@ def start(path):
     lengths, angles = getGradients(blurred)
     suppressed = supressMaximums(img, lengths, angles)
 
-    cv2.namedWindow('Blurred', cv2.WINDOW_NORMAL)
-    cv2.resizeWindow('Blurred', 1000, 500)
-    cv2.imshow("Blurred", suppressed)
+    maxGradient = getMaxValueFromMatrix(lengths)
+
+    lowLevel = maxGradient//15
+    highLevel = maxGradient//5
+
+    filtered = doubleEdgeFiltration(suppressed, lengths, lowLevel, highLevel)
+
+    cv2.namedWindow('Kanni', cv2.WINDOW_NORMAL)
+    cv2.resizeWindow('Kanni', 1000, 500)
+    cv2.imshow("Kanni", filtered)
     cv2.waitKey(0)
     cv2.destroyWindow('Normal')
 
@@ -54,8 +61,8 @@ def getGradients(img):
             yLocalRes = 0
             for k in range(3):
                 for n in range(3):
-                    xLocalRes += normImg[i-k-1][j-n-1] * xKernel[k][n]
-                    yLocalRes += normImg[i-k-1][j-n-1] * yKernel[k][n]
+                    xLocalRes += img[i-k-1][j-n-1] * xKernel[k][n]
+                    yLocalRes += img[i-k-1][j-n-1] * yKernel[k][n]
             if(xLocalRes==0):
                 xLocalRes = 0.001
             resMatrixLength[i][j] = math.sqrt(pow(xLocalRes, 2)+pow(yLocalRes, 2))
@@ -99,6 +106,40 @@ def supressMaximums(img, lengths, directions):
             if check: resMatrix[i][j] = 255
 
     return resMatrix
+
+def getMaxValueFromMatrix(matrix):
+    max = 0
+    for line in matrix:
+        for cur in line:
+            if cur > max:
+                max = cur
+    return max
+
+
+def doubleEdgeFiltration(img, lengths, lowLevel, highLevel):
+    resMatrix = np.zeros((img.shape[0], img.shape[1]), np.float64)
+    for i in range(1, img.shape[0] - 1):
+        for j in range(1, img.shape[1] - 1):
+            if img[i][j] == 255:
+                pixelLength = lengths[i][j]
+                if pixelLength > highLevel:
+                    resMatrix[i][j] = 255
+                elif pixelLength < lowLevel:
+                    continue
+
+    for i in range(1, img.shape[0] - 1):
+        for j in range(1, img.shape[1] - 1):
+            if img[i][j] == 255:
+                if lowLevel < lengths[i][j] < highLevel:
+                    check = False
+                    for k in range(-1,1):
+                        for n in range(-1,1):
+                            if resMatrix[i+k][j+n]:
+                                check = True
+                    if check:
+                        resMatrix[i][j] = 255
+    return resMatrix
+
 
 
 start(path = "Pic_shakal.jpg")
