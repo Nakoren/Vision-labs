@@ -14,12 +14,11 @@ def start(path):
     blurred = gaussianBlurCV(img, size, smooth_value)
 
     lengths, angles = getGradients(blurred)
-    #print(lengths)
-    print(angles)
+    suppressed = supressMaximums(img, lengths, angles)
 
     cv2.namedWindow('Blurred', cv2.WINDOW_NORMAL)
     cv2.resizeWindow('Blurred', 1000, 500)
-    cv2.imshow("Blurred", blurred)
+    cv2.imshow("Blurred", suppressed)
     cv2.waitKey(0)
     cv2.destroyWindow('Normal')
 
@@ -81,8 +80,25 @@ def getGradients(img):
                 finRes = 7
             resMatrixAngle[i][j] = finRes
 
-
     return resMatrixLength, resMatrixAngle
 
+def supressMaximums(img, lengths, directions):
+    resMatrix = np.zeros((img.shape[0], img.shape[1]), np.float64)
+    for i in range(1, len(img) - 1):
+        for j in range(1, len(img[i]) - 1):
+            check = False
+            if (directions[i][j] == 0) or (directions[i][j] == 4):
+                if(lengths[i][j]>lengths[i+1][j]) and (lengths[i][j]>lengths[i-1][j]): check = True
+            elif (directions[i][j] == 1) or (directions[i][j] == 5):
+                if (lengths[i][j] > lengths[i + 1][j + 1]) and (lengths[i][j] > lengths[i - 1][j - 1]): check = True
+            elif (directions[i][j] == 2) or (directions[i][j] == 6):
+                if (lengths[i][j] > lengths[i][j + 1]) and (lengths[i][j] > lengths[i][j - 1]): check = True
+            elif (directions[i][j] == 3) or (directions[i][j] == 7):
+                if (lengths[i][j] > lengths[i + 1][j - 1]) and (lengths[i][j] > lengths[i - 1][j + 1]): check = True
 
-start(path = "City_shakal.png")
+            if check: resMatrix[i][j] = 255
+
+    return resMatrix
+
+
+start(path = "Pic_shakal.jpg")
