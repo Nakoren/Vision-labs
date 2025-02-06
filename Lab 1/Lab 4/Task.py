@@ -33,28 +33,15 @@ def gaussianBlurCV(img, core_size, smooth_value):
     blur_img = cv2.GaussianBlur(img, (core_size, core_size), smooth_value)
     return blur_img
 
-def normalize(matr):
-    sum = 0
-    for line in matr:
-        for el in line:
-            sum+=el
-    result_matrix = np.ones((matr.shape[0], matr.shape[1]), np.float64)
-    for i in range(len(matr)):
-       for j in range(len(matr)):
-           result_matrix[i,j] = matr[i,j]/sum
-
-    return result_matrix
-
 def getGradients(img):
     resMatrixLength = np.ones((img.shape[0], img.shape[1]), np.float64)
     resMatrixAngle = np.ones((img.shape[0], img.shape[1]), np.float64)
 
-    normImg = normalize(img)
 
     xKernel = [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]]
     yKernel = [[-1, -2, -1], [0, 0, 0], [1, 2, 1]]
-    for i in range(1, len(normImg)-1):
-        for j in range(1, len(normImg[i])-1):
+    for i in range(1, len(img)-1):
+        for j in range(1, len(img[i])-1):
             x = img[i][j]
             y = img[i][j]
             xLocalRes = 0
