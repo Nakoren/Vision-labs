@@ -42,8 +42,6 @@ def getGradients(img):
     yKernel = [[-1, -2, -1], [0, 0, 0], [1, 2, 1]]
     for i in range(1, len(img)-1):
         for j in range(1, len(img[i])-1):
-            x = img[i][j]
-            y = img[i][j]
             xLocalRes = 0
             yLocalRes = 0
             for k in range(3):
@@ -121,12 +119,12 @@ def doubleEdgeFiltration(img, lengths, lowLevel, highLevel):
                     check = False
                     for k in range(-1,1):
                         for n in range(-1,1):
-                            if resMatrix[i+k][j+n]:
-                                check = True
+                            if resMatrix[i+k][j+n] != 0:
+                                    check = True
                     if check:
                         resMatrix[i][j] = 255
     return resMatrix
 
 
 
-start(path = "Pic_shakal.jpg")
+start(path = "City_shakal.png")
