@@ -2,53 +2,50 @@ import math
 import cv2
 import numpy as np
 
-def start():
+def start(core_size, smooth_value, delta_thres, contour_size):
     cv2.namedWindow('Window', cv2.WINDOW_NORMAL)
-    video = cv2.VideoCapture("LR4_main_video.mov")
-    state, img = video.read()
+    video = cv2.VideoCapture('LR4_main_video.mov')
     w = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
     h = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    fourcc = cv2.VideoWriter.fourcc(*'XVID')
-    video_writer = cv2.VideoWriter("output.mov", fourcc, 25, (w, h))
+    fps = int(video.get(cv2.CAP_PROP_FPS))
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    video_writer = cv2.VideoWriter('output.mp4', fourcc, 144, (w, h))
+    print(video_writer)
 
-    core_size = 11
-    smooth_value = 70
+    ok, frame = video.read()
 
-    delta_thres = 60
-    contourSize = 10
+    if(ok):
+        gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        gauss_frame = cv2.GaussianBlur(gray_frame, (core_size, core_size), sigmaX=smooth_value, sigmaY=smooth_value)
+        new_frame = gauss_frame
 
-    ok, img = video.read()
-    if ok:
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        prev_blur_frame = cv2.GaussianBlur(img, (core_size, core_size), smooth_value)
         while True:
-            ok, img = video.read()
+            prev_frame = new_frame.copy()
+            ok, frame = video.read()
             if not ok:
                 break
+            gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+            gauss_frame = cv2.GaussianBlur(gray_frame, (core_size, core_size), sigmaX=smooth_value, sigmaY=smooth_value)
 
-            img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            new_frame = gauss_frame
 
-            new_blur_frame = cv2.GaussianBlur(img, (core_size, core_size), smooth_value, smooth_value)
+            diff_frame = cv2.absdiff(prev_frame, new_frame)
 
-            diff = cv2.absdiff(prev_blur_frame, new_blur_frame)
+            thres_frame = cv2.threshold(diff_frame, delta_thres, 255, cv2.THRESH_BINARY)[1]
 
-            thres_frame = cv2.threshold(diff, delta_thres, 255, cv2.THRESH_BINARY)[1]
-
-            (cont, hierarchy) = cv2.findContours(thres_frame, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-            for contr in cont:
+            (contours, hierarchy) = cv2.findContours(thres_frame, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            for contr in contours:
                 area = cv2.contourArea(contr)
-                if area < contourSize:
+                if area < contour_size:
                     continue
-                video_writer.write(img)
-                cv2.imshow('Window', img)
-
+                video_writer.write(frame)
+                cv2.imshow('frame', thres_frame)
             if cv2.waitKey(1) & 0xFF == 27:
                 break
-            prev_blur_frame = new_blur_frame
 
     video.release()
     video_writer.release()
     cv2.destroyAllWindows()
 
 
-start()
+start(11, 70, 60, 10)
